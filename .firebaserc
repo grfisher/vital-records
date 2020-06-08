@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "vital-statistics-8e416"
+  },
+  "targets": {
+    "vital-statistics-8e416": {
+      "hosting": {
+        "vital-records": [
+          "vital-statistics-8e416"
+        ]
+      }
+    }
+  }
+}
