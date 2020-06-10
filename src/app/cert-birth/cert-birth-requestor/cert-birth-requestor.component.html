@@ -14,17 +14,96 @@
     </div>
 </div>
 
-<div class="container section-border section-border-spacing">
-    <div class="row">
-        <div class="col">
-            Requestor Form
+<form [formGroup]="requestorFormGroup">
+    <div class="container section-border section-border-spacing">
+        <div class="row">
+            <div class="col gen-info-spacing">
+                GENERAL INFORMATION
+                <hr class="gen-info">
+            </div>
         </div>
+        <div class="row">
+            <div class="form-group-spacing">
+                <label for="reqReason">Reason For Request</label>
+                <input class="form-control form-control-sm" name="reqReason" id="reqReason" type="text" formControlName="reqReason">
+            </div>
+            <div class="form-group-spacing">
+                <label for="reqRelationship">Relationship To Requestor</label>
+                <input class="form-control form-control-sm" name="reqRelationship" id="reqRelationship" type="text" formControlName="reqRelationship">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col gen-info-spacing">
+                CONTACT INFORMATION
+                <hr class="gen-info">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group-spacing">
+                <label for="firstName">First Name</label>
+                <input class="form-control form-control-sm" name="firstName" id="firstName" type="text" formControlName="firstName">
+            </div>
+            <div class="form-group-spacing">
+                <label for="middleName">Middle Name</label>
+                <input class="form-control form-control-sm" name="middleName" id="middleName" type="text" formControlName="middleName">
+            </div>
+            <div class="form-group-spacing">
+                <label for="lastName">Last Name</label>
+                <input class="form-control form-control-sm" name="lastName" id="lastName" type="text" formControlName="lastName">
+            </div>
+        </div>
+        <div class="row vfifteen">
+            <div class="col">    
+                <label for="address1">Address Line 1</label>
+                <input class="form-control form-control-sm" name="address1" id="address1" type="text" formControlName="address1">
+            </div>
+        </div>
+        <div class="row vfifteen">
+            <div class="col">    
+                <label for="address2">Address Line </label>
+                <input class="form-control form-control-sm" name="address2" id="address2" type="text" formControlName="address2">
+            </div>
+        </div>
+        <div class="row vfifteen">
+            <div class="form-group-spacing">
+                <label for="city">City</label>
+                <input class="form-control form-control-sm" name="city" id="city" type="text" formControlName="city">
+            </div>
+            <div class="form-group-spacing">
+                <label for="county">County</label>
+                <input class="form-control form-control-sm" name="county" id="county" type="text" formControlName="county">
+            </div>
+            <div class="form-group-spacing">
+                <label for="state">State</label>
+                <input class="form-control form-control-sm twochar" maxlength="2" name="state" id="state" type="text" formControlName="state">
+            </div>
+            <div class="form-group-spacing col-xs-1">
+                <label for="country">Country</label>
+                <input class="form-control form-control-sm" maxlength="12" name="country" id="country" type="text" formControlName="country">
+            </div>
+            <div></div>
+        </div>
+        <div class="row vfifteen">
+            <div class="form-group-spacing">
+                <label for="phone">Phone Number</label>
+                <input class="form-control form-control-sm" name="phone" id="firstName" type="text" formControlName="phone">
+            </div>
+            <div class="form-group-spacing">
+                <label for="email">Email</label>
+                <input class="form-control form-control-sm" name="email" id="middleName" type="text" formControlName="email">
+            </div>
+            <div class="form-group-spacing">
+                <label for="emailConfirm">Email Confirmation</label>
+                <input class="form-control form-control-sm" name="emailConfirm" id="emailConfirm" type="text" formControlName="emailConfirm">
+            </div>
+        </div>
+        <br>
     </div>
-</div>
-
+</form>
 <div class="container section-border section-border-spacing">
     <div class="row navigation-row">
+        this.router.navigateByUrl(`/courses/${course.id}`);
         <a routerLink="/cert-birth-terms/"><div class="navigation-spacing"><< PREVIOUS</div></a>
-        <a routerLink="/cert-birth-registrant/"><div class="navigation-spacing">NEXT >></div></a>
+        <a routerLink="/cert-birth-registrant/">NEXT >></a>
     </div>
 </div>
