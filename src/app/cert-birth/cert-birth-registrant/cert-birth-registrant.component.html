@@ -14,13 +14,127 @@
     </div>
 </div>
 
-<div class="container section-border section-border-spacing">
-    <div class="row">
-        <div class="col">
-            Registrant Form
+<form [formGroup]="registrantFormGroup">
+    <div class="container section-border section-border-spacing">
+        <div class="row">
+            <div class="col gen-info-spacing">
+                NAME ON CERTIFICATE
+                <hr class="gen-info">
+            </div>
         </div>
+        <div class="row">
+            <div class="form-group-spacing">
+                <label for="certsReqd"># Certificates Requested</label>
+                <input class="form-control form-control-sm twochar" maxlength="2" name="certsReqd" id="certsReqd" type="text" formControlName="certsReqd">
+            </div>
+        </div>
+        <div class="row vfifteen">
+            <div class="form-group-spacing">
+                <label for="firstName">First Name</label>
+                <input class="form-control form-control-sm" name="firstName" id="firstName" type="text" formControlName="firstName">
+            </div>
+            <div class="form-group-spacing">
+                <label for="middleName">Middle Name</label>
+                <input class="form-control form-control-sm" name="middleName" id="middleName" type="text" formControlName="middleName">
+            </div>
+            <div class="form-group-spacing">
+                <label for="lastName">Last Name</label>
+                <input class="form-control form-control-sm twochar" maxlength="2" name="lastName" id="lastName" type="text" formControlName="lastName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col gen-info-spacing">
+                BIRTH INFORMATION
+                <hr class="gen-info">
+            </div>
+        </div>
+        <div class="row vfifteen">
+            <div class="form-group-spacing">
+                <label for="dob">Date Of Birth</label>
+                <input class="form-control form-control-sm" name="dob" id="dob" type="text" formControlName="dob">
+            </div>
+            <div class="form-group-spacing">
+                <label for="genderId">Gender Identity</label>
+                <input class="form-control form-control-sm" name="genderId" id="genderId" type="text" formControlName="genderId">
+            </div>
+        </div>
+            <div class="row vfifteen">
+                <div class="form-group-spacing">
+                    <label for="city">City</label>
+                    <input class="form-control form-control-sm" name="city" id="city" type="text" formControlName="city">
+                </div>
+                <div class="form-group-spacing col-xs-1">
+                    <label for="county">County</label>
+                    <input class="form-control form-control-sm" name="county" id="county" type="text" formControlName="county">
+                </div>
+                <div class="form-group-spacing col-xs-1">
+                    <label for="state">State</label>
+                    <input class="form-control form-control-sm twochar" maxlength="2" name="state" id="state" type="text" formControlName="state">
+                </div>
+            </div>
+            
+        <div class="row">
+            <div class="col gen-info-spacing">
+                DEATH INFORMATION
+                <hr class="gen-info">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col gen-info-spacing">
+                Is this person deceased?
+                <div class="radio-inline">
+                    <input id="deceased" type="radio" name="deceasedControl" formControlName="deceasedControl" />
+                    <label class="radio-label"> Yes</label>&nbsp;&nbsp;
+                    <input id="deceased" type="radio" name="deceasedControl" formControlName="deceasedControl" />
+                    <label class="radio-label">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col gen-info-spacing">
+                PARENT INFORMATION
+                <hr class="gen-info">
+            </div>
+        </div>
+        <div class="row vfifteen">
+            <div class="form-group-spacing">
+                <label for="firstName1">Parent 1 First Name</label>
+                <input class="form-control form-control-sm" name="firstName1" id="firstName1" type="text" formControlName="firstName1">
+            </div>
+            <div class="form-group-spacing">
+                <label for="middleName1">Parent 1 Middle Name</label>
+                <input class="form-control form-control-sm" name="middleName1" id="middleName1" type="text" formControlName="middleName1">
+            </div>
+            <div class="form-group-spacing">
+                <label for="lastName1">Parent 1 Last Name</label>
+                <input class="form-control form-control-sm" name="lastName1" id="lastName1" type="text" formControlName="lastName1">
+            </div>
+            <div class="form-group-spacing">
+                <label for="suffix1">Parent 1 Suffix</label>
+                <input class="form-control form-control-sm" name="suffix1" id="suffix1" type="text" formControlName="suffix1">
+            </div>
+        </div>
+        <div class="row vfifteen">
+            <div class="form-group-spacing">
+                <label for="firstName2">Parent 2 First Name</label>
+                <input class="form-control form-control-sm" name="firstName2" id="firstName2" type="text" formControlName="firstName2">
+            </div>
+            <div class="form-group-spacing">
+                <label for="middleName2">Parent 2 Middle Name</label>
+                <input class="form-control form-control-sm" name="middleName2" id="middleName2" type="text" formControlName="middleName2">
+            </div>
+            <div class="form-group-spacing">
+                <label for="lastName2">Parent 2 Last Name</label>
+                <input class="form-control form-control-sm" name="lastName2" id="lastName2" type="text" formControlName="lastName2">
+            </div>
+            <div class="form-group-spacing">
+                <label for="suffix2">Parent 2 Suffix</label>
+                <input class="form-control form-control-sm" name="suffix2" id="suffix2" type="text" formControlName="suffix2">
+            </div>
+        </div>
+        <br>
     </div>
-</div>
+</form>
 
 <div class="container section-border section-border-spacing">
     <div class="row navigation-row">
