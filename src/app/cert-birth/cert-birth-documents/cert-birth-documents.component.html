@@ -16,9 +16,135 @@
 
 <div class="container section-border section-border-spacing">
     <div class="row">
-        <div class="col">
-            Document Upload
+        <div class="col-lg-3 showInfo">
+            <button (click)="stateDocToggle()" class="btn btn-default btn3d">{{ stateDocBtnName }}</button>
         </div>
+        <div *ngIf = "showStateDocForm; else showStateInfo" class="col-lg-9 upload-spacing">
+            <ng-container>
+                <form [formGroup]="stateFormGroup" (ngSubmit)="submit()">
+                    <label for="name">Document Title&nbsp;</label>
+                    <input 
+                        formControlName="name"
+                        id="name" 
+                        type="text" 
+                        class="input-sm">
+                        &nbsp;&nbsp;
+                          
+                        <label for="file">File</label>
+                    <input 
+                        formControlName="file"
+                        id="file" 
+                        type="file" 
+                        class="form-control-sm"
+                        (change)="onStateFileChange($event)">
+                                         
+                    <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
+    
+                    <div *ngIf="stateForm.name.touched && stateForm.name.invalid" class="alert alert-danger">
+                        <div class="validation" *ngIf="stateForm.name.errors.required">Name is required.</div>
+                        <div class="validation" *ngIf="stateForm.name.errors.minlength">Name should be 3 character.</div>
+                    </div>
+                                
+                    <div *ngIf="stateForm.file.touched && stateForm.file.invalid" class="alert alert-danger">
+                        <div *ngIf="stateForm.file.errors.required">File is required.</div>
+                    </div>
+                </form> 
+            </ng-container>
+        </div> 
+        <ng-template #showStateInfo>
+            <p><span class="line-break-after showInfo">Please provide a copy of your State Issued ID by clicking <i><strong>Upload State Document</strong></i> button</span>
+            <span class="line-break-before">
+                <input type="checkbox"  data-md-icheck (change)="toggleVisibility($event)"/>
+                Click here if you do not have digital copy of document available (office will contact you for more information)</span></p>
+        </ng-template>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3 showInfo">
+            <button (click)="firstDocToggle()" class="btn btn-default btn3d">{{ firstDocBtnName }}</button>
+        </div>
+        <div *ngIf = "showFirstDocForm; else showFirstInfo" class="col-lg-9 upload-spacing">
+            <ng-container>
+                <form [formGroup]="firstFormGroup" (ngSubmit)="submit()">
+                    <label for="name">Document Title&nbsp;</label>
+                        <input 
+                            formControlName="name"
+                            id="name" 
+                            type="text" 
+                            class="input-sm">
+                            &nbsp;&nbsp;
+                      
+                        <label for="file">File</label>
+                        <input 
+                            formControlName="file"
+                            id="file" 
+                            type="file" 
+                            class="form-control-sm"
+                            (change)="onFirstFileChange($event)">
+                                     
+                            <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
+
+                            <div *ngIf="firstForm.name.touched && firstForm.name.invalid" class="alert alert-danger">
+                                <div class="validation" *ngIf="firstForm.name.errors.required">Name is required.</div>
+                                <div class="validation" *ngIf="firstForm.name.errors.minlength">Name should be 3 character.</div>
+                            </div>
+                            
+                            <div *ngIf="firstForm.file.touched && firstForm.file.invalid" class="alert alert-danger">
+                                <div *ngIf="firstForm.file.errors.required">File is required.</div>
+                            </div>
+                </form>         
+            </ng-container>
+        </div>
+        <ng-template #showFirstInfo>
+            <p><span class="line-break-after showInfo">Please provide a copy of your first document by clicking <i><strong>Upload First Document</strong></i> button</span>
+                <span class="line-break-before">
+                    <input type="checkbox"  data-md-icheck (change)="toggleVisibility($event)"/>
+                    Click here if you do not have digital copy of document available (office will contact you for more information)</span></p>
+        </ng-template>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 showInfo">
+            <button (click)="secondDocToggle()" class="btn btn-default btn3d">{{ secondDocBtnName }}</button>
+        </div>
+        <div *ngIf = "showSecondDocForm; else showSecondInfo" class="col-lg-9 upload-spacing">
+            <ng-container *ngIf="showSecondDocForm">
+                <form [formGroup]="secondFormGroup" (ngSubmit)="submit()">
+                    <label for="name">Document Title&nbsp;</label>
+                        <input 
+                            formControlName="name"
+                            id="name" 
+                            type="text" 
+                            class="input-sm">
+                            &nbsp;&nbsp;
+                      
+                        <label for="file">File</label>
+                        <input 
+                            formControlName="file"
+                            id="file" 
+                            type="file" 
+                            class="form-control-sm"
+                            (change)="onSecondFileChange($event)">
+                                     
+                            <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
+
+                            <div *ngIf="secondForm.name.touched && secondForm.name.invalid" class="alert alert-danger">
+                                <div class="validation" *ngIf="secondForm.name.errors.required">Name is required.</div>
+                                <div class="validation" *ngIf="secondForm.name.errors.minlength">Name should be 3 character.</div>
+                            </div>
+                            
+                            <div *ngIf="secondForm.file.touched && secondForm.file.invalid" class="alert alert-danger">
+                                <div *ngIf="secondForm.file.errors.required">File is required.</div>
+                            </div>
+                </form>         
+            </ng-container>
+        </div>
+        <ng-template #showSecondInfo>
+            <p><span class="line-break-after showInfo">Please provide a copy of your second document by clicking <i><strong>Upload Second Document</strong></i> button</span>
+                <span class="line-break-before">
+                    <input type="checkbox"  data-md-icheck (change)="toggleVisibility($event)"/>
+                    Click here if you do not have digital copy of document available (office will contact you for more information)</span></p>
+        </ng-template>
+    <br>
     </div>
 </div>
 

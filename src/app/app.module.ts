@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './shared/components/login/login.component';
@@ -18,6 +17,9 @@ import { ThankYouComponent } from './checkout/thank-you/thank-you.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { InfoFooterComponent } from './shared/components/info-footer/info-footer.component';
 import { CartComponent } from './checkout/cart/cart.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { CartComponent } from './checkout/cart/cart.component';
     AppRoutingModule,
     NgbModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

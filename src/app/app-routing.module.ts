@@ -7,8 +7,10 @@ import { CertBirthRequestorComponent } from './cert-birth/cert-birth-requestor/c
 import { CertBirthRegistrantComponent } from './cert-birth/cert-birth-registrant/cert-birth-registrant.component';
 import { CertBirthDocumentsComponent } from './cert-birth/cert-birth-documents/cert-birth-documents.component';
 import { CertBirthReviewComponent } from './cert-birth/cert-birth-review/cert-birth-review.component';
+import { CheckoutComponent } from './checkout/checkout/checkout.component';
 
 const routes: Routes = [
+  { path: 'checkout', component: CheckoutComponent },
   { path: 'cert-birth-review', component: CertBirthReviewComponent },
   { path: 'cert-birth-documents', component: CertBirthDocumentsComponent },
   { path: 'cert-birth-registrant', component: CertBirthRegistrantComponent },
@@ -20,7 +22,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled', // Add options right here
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
