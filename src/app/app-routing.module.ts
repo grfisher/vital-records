@@ -8,8 +8,12 @@ import { CertBirthRegistrantComponent } from './cert-birth/cert-birth-registrant
 import { CertBirthDocumentsComponent } from './cert-birth/cert-birth-documents/cert-birth-documents.component';
 import { CertBirthReviewComponent } from './cert-birth/cert-birth-review/cert-birth-review.component';
 import { CheckoutComponent } from './checkout/checkout/checkout.component';
+import { CartComponent } from './checkout/cart/cart.component';
+import { ThankYouComponent } from './checkout/thank-you/thank-you.component';
 
 const routes: Routes = [
+  { path: 'thank-you', component: ThankYouComponent },
+  { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'cert-birth-review', component: CertBirthReviewComponent },
   { path: 'cert-birth-documents', component: CertBirthDocumentsComponent },
