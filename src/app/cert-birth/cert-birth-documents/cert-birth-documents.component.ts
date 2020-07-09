@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators, ControlContainer} from '@angular/forms';
 
 @Component({
   selector: 'app-cert-birth-documents',
@@ -9,38 +9,31 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class CertBirthDocumentsComponent implements OnInit {
 
-  stateFormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    file: new FormControl('', [Validators.required]),
-    fileSource: new FormControl('', [Validators.required])
-  });
+  stateFormGroup: FormGroup;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
 
-  firstFormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    file: new FormControl('', [Validators.required]),
-    fileSource: new FormControl('', [Validators.required])
-  });
-
-  secondFormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    file: new FormControl('', [Validators.required]),
-    fileSource: new FormControl('', [Validators.required])
-  });
-
+  // Initial states
   showStateDocForm = false;
   showFirstDocForm = false;
   showSecondDocForm = false;
 
+  // Upload buttons
   stateDocBtnName: any = 'Upload State Document';
   firstDocBtnName: any = 'Upload First Document';
   secondDocBtnName: any = 'Upload Second Document';
 
+  // Checkbox
   marked = false;
   theCheckbox = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private containerForm: ControlContainer) { }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.stateFormGroup = this.containerForm.control.get('stateDocument') as FormGroup;
+    this.firstFormGroup = this.containerForm.control.get('firstDocument') as FormGroup;
+    this.secondFormGroup = this.containerForm.control.get('secondDocument') as FormGroup;
+  }
 
   get stateForm() {
     return this.stateFormGroup.controls;
@@ -125,8 +118,9 @@ export class CertBirthDocumentsComponent implements OnInit {
     }
   }
 
+  // Checkbox toggle
   toggleVisibility(e){
-    this.marked= e.target.checked;
+    this.marked = e.target.checked;
   }
 }
 

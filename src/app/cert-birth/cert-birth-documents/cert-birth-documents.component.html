@@ -24,29 +24,29 @@
                 <form [formGroup]="stateFormGroup" (ngSubmit)="submit()">
                     <label for="name">Document Title&nbsp;</label>
                     <input 
-                        formControlName="name"
-                        id="name" 
+                        formControlName="stateDocTitle"
+                        id="stateDocTitle" 
                         type="text" 
                         class="input-sm">
                         &nbsp;&nbsp;
                           
                         <label for="file">File</label>
                     <input 
-                        formControlName="file"
-                        id="file" 
+                        formControlName="stateDocFileName"
+                        id="stateDocFileName" 
                         type="file" 
                         class="form-control-sm"
                         (change)="onStateFileChange($event)">
                                          
                     <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
     
-                    <div *ngIf="stateForm.name.touched && stateForm.name.invalid" class="alert alert-danger">
-                        <div class="validation" *ngIf="stateForm.name.errors.required">Name is required.</div>
-                        <div class="validation" *ngIf="stateForm.name.errors.minlength">Name should be 3 character.</div>
+                    <div *ngIf="stateForm.stateDocTitle.touched && stateForm.stateDocTitle.invalid" class="alert alert-danger">
+                        <div class="validation" *ngIf="stateForm.stateDocTitle.errors.required">Name is required.</div>
+                        <div class="validation" *ngIf="stateForm.stateDocTitle.errors.minlength">Name should be 3 character.</div>
                     </div>
                                 
-                    <div *ngIf="stateForm.file.touched && stateForm.file.invalid" class="alert alert-danger">
-                        <div *ngIf="stateForm.file.errors.required">File is required.</div>
+                    <div *ngIf="stateForm.stateDocFileName.touched && stateForm.stateDocFileName.invalid" class="alert alert-danger">
+                        <div *ngIf="stateForm.stateDocFileName.errors.required">File is required.</div>
                     </div>
                 </form> 
             </ng-container>
@@ -68,29 +68,29 @@
                 <form [formGroup]="firstFormGroup" (ngSubmit)="submit()">
                     <label for="name">Document Title&nbsp;</label>
                         <input 
-                            formControlName="name"
-                            id="name" 
+                            formControlName="firstDocTitle"
+                            id="firstDocTitle" 
                             type="text" 
                             class="input-sm">
                             &nbsp;&nbsp;
                       
                         <label for="file">File</label>
                         <input 
-                            formControlName="file"
-                            id="file" 
+                            formControlName="firstDocFileName"
+                            id="firstDocFileName" 
                             type="file" 
                             class="form-control-sm"
                             (change)="onFirstFileChange($event)">
                                      
                             <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
 
-                            <div *ngIf="firstForm.name.touched && firstForm.name.invalid" class="alert alert-danger">
-                                <div class="validation" *ngIf="firstForm.name.errors.required">Name is required.</div>
-                                <div class="validation" *ngIf="firstForm.name.errors.minlength">Name should be 3 character.</div>
+                            <div *ngIf="firstForm.firstDocTitle.touched && firstForm.firstDocTitle.invalid" class="alert alert-danger">
+                                <div class="validation" *ngIf="firstForm.firstDocTitle.errors.required">Name is required.</div>
+                                <div class="validation" *ngIf="firstForm.firstDocTitle.errors.minlength">Name should be 3 character.</div>
                             </div>
                             
-                            <div *ngIf="firstForm.file.touched && firstForm.file.invalid" class="alert alert-danger">
-                                <div *ngIf="firstForm.file.errors.required">File is required.</div>
+                            <div *ngIf="firstForm.firstDocFileName.touched && firstForm.firstDocFileName.invalid" class="alert alert-danger">
+                                <div *ngIf="firstForm.firstDocFileName.errors.required">File is required.</div>
                             </div>
                 </form>         
             </ng-container>
@@ -107,33 +107,33 @@
             <button (click)="secondDocToggle()" class="btn btn-default btn3d">{{ secondDocBtnName }}</button>
         </div>
         <div *ngIf = "showSecondDocForm; else showSecondInfo" class="col-lg-9 upload-spacing">
-            <ng-container *ngIf="showSecondDocForm">
+            <ng-container>
                 <form [formGroup]="secondFormGroup" (ngSubmit)="submit()">
                     <label for="name">Document Title&nbsp;</label>
                         <input 
-                            formControlName="name"
-                            id="name" 
+                            formControlName="secondDocTitle"
+                            id="secondDocTitle" 
                             type="text" 
                             class="input-sm">
                             &nbsp;&nbsp;
                       
                         <label for="file">File</label>
                         <input 
-                            formControlName="file"
-                            id="file" 
+                            formControlName="secondDocFileName"
+                            id="secondDocFileName" 
                             type="file" 
                             class="form-control-sm"
                             (change)="onSecondFileChange($event)">
                                      
                             <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
 
-                            <div *ngIf="secondForm.name.touched && secondForm.name.invalid" class="alert alert-danger">
-                                <div class="validation" *ngIf="secondForm.name.errors.required">Name is required.</div>
-                                <div class="validation" *ngIf="secondForm.name.errors.minlength">Name should be 3 character.</div>
+                            <div *ngIf="secondForm.secondDocTitle.touched && secondForm.secondDocTitle.invalid" class="alert alert-danger">
+                                <div class="validation" *ngIf="secondForm.secondDocTitle.errors.required">Name is required.</div>
+                                <div class="validation" *ngIf="secondForm.secondDocTitle.errors.minlength">Name should be 3 character.</div>
                             </div>
                             
-                            <div *ngIf="secondForm.file.touched && secondForm.file.invalid" class="alert alert-danger">
-                                <div *ngIf="secondForm.file.errors.required">File is required.</div>
+                            <div *ngIf="secondForm.secondDocFileName.touched && secondForm.secondDocFileName.invalid" class="alert alert-danger">
+                                <div *ngIf="secondForm.secondDocFileName.errors.required">File is required.</div>
                             </div>
                 </form>         
             </ng-container>
@@ -148,9 +148,10 @@
     </div>
 </div>
 
+
 <div class="container section-border section-border-spacing">
     <div class="row navigation-row">
-        <a routerLink="/cert-birth-registrant/"><div class="navigation-spacing"><< PREVIOUS</div></a>
-        <a routerLink="/cert-birth-review/"><div class="navigation-spacing">NEXT >></div></a>
+        <a routerLink="/forms/registrant/"><div class="navigation-spacing"><< PREVIOUS</div></a>
+        <a routerLink="/forms/review/"><div class="navigation-spacing">NEXT >></div></a>
     </div>
 </div>

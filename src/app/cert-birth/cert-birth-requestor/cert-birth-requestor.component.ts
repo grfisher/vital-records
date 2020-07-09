@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, ControlContainer } from '@angular/forms';
 
 @Component({
   selector: 'app-cert-birth-requestor',
@@ -10,28 +10,9 @@ export class CertBirthRequestorComponent implements OnInit {
 
   requestorFormGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { 
-    this.requestorFormGroup = this.formBuilder.group({
-      'reqReason': [''],
-      'reqRelationship': [''],
-      'firstName': [''],
-      'middleName': [''],
-      'lastName': [''],
+  constructor(private containerForm: ControlContainer) { }
 
-      'address1': [''],
-      'address2': [''],
-      'city': [''],
-      'county': [''],
-      'state': [''],
-      'country': [''],
-
-      'phone': [''],
-      'email': [''],
-      'emailConfirm': ['']
-    });
+  ngOnInit() {
+    this.requestorFormGroup = this.containerForm.control.get('requestor') as FormGroup;
   }
-
-  ngOnInit(): void {
-  }
-
 }

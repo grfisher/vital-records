@@ -8,16 +8,26 @@ import { CertBirthRegistrantComponent } from './cert-birth-registrant/cert-birth
 import { CertBirthDocumentsComponent } from './cert-birth-documents/cert-birth-documents.component';
 import { CertBirthReviewComponent } from './cert-birth-review/cert-birth-review.component';
 
+import { CartComponent } from '../../app/checkout/cart/cart.component';
+import { CheckoutComponent } from '../../app/checkout/checkout/checkout.component';
+import { ThankYouComponent } from '../../app/checkout/thank-you/thank-you.component';
+
 import { ShoppingCartComponent } from '../shopping-cart/shopping-cart/shopping-cart.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { BirthFormPagesComponent } from './birth-form-pages.component';
 
 
 const routes = [
   {
     path: '',
-    component: ShoppingCartComponent,
+    component: BirthFormPagesComponent,
     children: [
-      { path: '', redirectTo: 'terms' },
+      { path: '', redirectTo: 'shopping' },
+      {
+        path: 'shopping',
+        component: ShoppingCartComponent
+      },
+      { path: 'terms', redirectTo: 'terms' },
       {
         path: 'terms',
         component: CertBirthTermsComponent
@@ -38,7 +48,19 @@ const routes = [
         path: 'review',
         component: CertBirthReviewComponent
       },
-      { path: '**', redirectTo: 'cert-birth-requestor' }
+      {
+        path: 'cart',
+        component: CartComponent
+      },
+      {
+        path: 'checkout',
+        component: CheckoutComponent
+      },
+      {
+        path: 'thank-you',
+        component: ThankYouComponent
+      },
+      { path: '**', redirectTo: 'shopping' }
     ]
   }
 ];
@@ -56,7 +78,9 @@ const routes = [
     CertBirthRequestorComponent,
     CertBirthRegistrantComponent,
     CertBirthDocumentsComponent,
-    ShoppingCartComponent],
+    ShoppingCartComponent,
+    CertBirthReviewComponent,
+    BirthFormPagesComponent],
     providers: [],
     bootstrap: [CertBirthDocumentsComponent]
 })
