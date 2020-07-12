@@ -56,6 +56,8 @@ export class CertBirthDocumentsComponent implements OnInit {
     }
   }
 
+
+
   onFirstFileChange(event) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
@@ -74,9 +76,17 @@ export class CertBirthDocumentsComponent implements OnInit {
     }
   }
 
-  submit() {
+  submitForm(fileName) {
     const formData = new FormData();
-    formData.append('file', this.stateFormGroup.get('fileSource').value);
+    alert(this.stateFormGroup.get(fileName).value);
+
+    if (fileName === 'stateDocFileName') {
+      formData.append('file', this.stateFormGroup.get('stateDocFileName').value);
+    } else if (fileName === 'firstDocFileName') {
+      formData.append('file', this.stateFormGroup.get('firstDocFileName').value);
+    } else if (fileName === 'secondDocFileName') {
+      formData.append('file', this.stateFormGroup.get('secondDocFileName').value);
+    }
 
     this.http.post('http://localhost:8001/upload.php', formData)
       .subscribe(res => {

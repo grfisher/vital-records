@@ -11,11 +11,10 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart/shopping-ca
 import { CheckoutComponent } from './checkout/checkout/checkout.component';
 import { ThankYouComponent } from './checkout/thank-you/thank-you.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { InfoFooterComponent } from './shared/components/info-footer/info-footer';
+import { FooterInfoComponent } from './shared/components//footer-info/footer-info.component';
 import { CartComponent } from './checkout/cart/cart.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FooterNavComponent } from './shared/components/footer-nav/footer-nav.component';
 
 const routes = [
   { path: '', redirectTo: 'shopping-cart', pathMatch: 'full' },
@@ -36,9 +35,8 @@ const routes = [
     CheckoutComponent,
     ThankYouComponent,
     FooterComponent,
-    InfoFooterComponent,
-    CartComponent,
-    FooterNavComponent
+    FooterInfoComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

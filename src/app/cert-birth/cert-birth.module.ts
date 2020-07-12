@@ -2,10 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+
 import { CertBirthTermsComponent } from './cert-birth-terms/cert-birth-terms.component';
+
+import { CertBirthRequestorNavComponent } from './cert-birth-requestor/cert-birth-requestor-nav.component';
 import { CertBirthRequestorComponent } from './cert-birth-requestor/cert-birth-requestor.component';
+
+import { CertBirthRegistrantNavComponent } from './cert-birth-registrant/cert-birth-registrant-nav.component';
 import { CertBirthRegistrantComponent } from './cert-birth-registrant/cert-birth-registrant.component';
+
+import { CertBirthDocumentsNavComponent } from './cert-birth-documents/cert-birth-documents-nav.component';
 import { CertBirthDocumentsComponent } from './cert-birth-documents/cert-birth-documents.component';
+
 import { CertBirthReviewComponent } from './cert-birth-review/cert-birth-review.component';
 
 import { CartComponent } from '../../app/checkout/cart/cart.component';
@@ -15,6 +23,8 @@ import { ThankYouComponent } from '../../app/checkout/thank-you/thank-you.compon
 import { ShoppingCartComponent } from '../shopping-cart/shopping-cart/shopping-cart.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BirthFormPagesComponent } from './birth-form-pages.component';
+import { FooterNavComponent } from '../shared/components/footer-nav/footer-nav.component';
+import { SignaturePadComponent } from '../shared/components/signature-pad/signature-pad.component';
 
 
 const routes = [
@@ -34,15 +44,15 @@ const routes = [
       },
       {
         path: 'requestor',
-        component: CertBirthRequestorComponent
+        component: CertBirthRequestorNavComponent
       },
       {
         path: 'registrant',
-        component: CertBirthRegistrantComponent
+        component: CertBirthRegistrantNavComponent
       },
       {
         path: 'documents',
-        component: CertBirthDocumentsComponent
+        component: CertBirthDocumentsNavComponent
       },
       {
         path: 'review',
@@ -75,13 +85,20 @@ const routes = [
   ],
   declarations: [
     CertBirthTermsComponent,
+    CertBirthRequestorNavComponent,
     CertBirthRequestorComponent,
+    CertBirthRegistrantNavComponent,
     CertBirthRegistrantComponent,
+    CertBirthDocumentsNavComponent,
     CertBirthDocumentsComponent,
     ShoppingCartComponent,
     CertBirthReviewComponent,
-    BirthFormPagesComponent],
+    BirthFormPagesComponent,
+    FooterNavComponent,
+    CertBirthDocumentsNavComponent,
+    CertBirthRegistrantNavComponent,
+    SignaturePadComponent],
     providers: [],
-    bootstrap: [CertBirthDocumentsComponent]
+
 })
 export class CertBirthModule { }

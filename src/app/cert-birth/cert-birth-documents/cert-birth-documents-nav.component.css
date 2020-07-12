@@ -87,11 +87,3 @@ hr.gen-info{
   p span {
     display: block;
   }
-
-  .review-section{
-    margin-bottom: 5px;
-    margin-top: 10px;
-    margin-left: 2px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-  }

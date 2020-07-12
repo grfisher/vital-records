@@ -1,11 +1,24 @@
+<div class="container section-border section-border-spacing">
+    <div class="row">
+        <div class="col section-hdr">
+            REQUESTOR
+        </div>
+    </div>
+</div>
+
+<div class="container section-border section-border-spacing">
+    <div class="row">
+        <div class="col certificate-hdr">
+            BIRTH CERTIFICATE
+        </div>
+    </div>
+</div>
+
 <form [formGroup]="requestorFormGroup">
     <div class="container section-border section-border-spacing">
-        <div class="row review-section">
-            Birth Certificate: Requestor
-        </div>
         <div class="row">
             <div class="col gen-info-spacing">
-                General Information
+                GENERAL INFORMATION
                 <hr class="gen-info">
             </div>
         </div>
@@ -21,7 +34,7 @@
         </div>
         <div class="row">
             <div class="col gen-info-spacing">
-                Contact Information
+                CONTACT INFORMATION
                 <hr class="gen-info">
             </div>
         </div>
@@ -87,3 +100,9 @@
         <br>
     </div>
 </form>
+<div class="container section-border section-border-spacing">
+    <div class="row navigation-row">
+        <a routerLink="/forms/terms/"><div class="navigation-spacing"><< PREVIOUS</div></a>
+        <a routerLink="/forms/registrant/">NEXT >></a>
+    </div>
+</div>

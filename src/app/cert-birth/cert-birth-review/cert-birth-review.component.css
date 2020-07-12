@@ -1,0 +1,22 @@
+hr.gen-info{
+    border-top: 2px solid rgb(159, 121, 216);
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+.gen-info-spacing{
+    margin-top: 15px;
+}
+
+.form-group-spacing{
+    margin-left: 15px;
+}
+
+.twochar
+{
+    width:3em;
+}
+
+.vfifteen{
+    margin-top: 15px;
+}

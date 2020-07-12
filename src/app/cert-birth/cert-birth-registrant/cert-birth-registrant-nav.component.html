@@ -1,9 +1,24 @@
+<div class="container section-border section-border-spacing">
+    <div class="row">
+        <div class="col section-hdr">
+            REGISTRANT
+        </div>
+    </div>
+</div>
+
+<div class="container section-border section-border-spacing">
+    <div class="row">
+        <div class="col certificate-hdr">
+            BIRTH CERTIFICATE
+        </div>
+    </div>
+</div>
+
 <form [formGroup]="registrantFormGroup">
     <div class="container section-border section-border-spacing">
-        <div class="row review-section">Birth Certificate: Registrant</div>
         <div class="row">
             <div class="col gen-info-spacing">
-                Name On Certificate
+                NAME ON CERTIFICATE
                 <hr class="gen-info">
             </div>
         </div>
@@ -29,7 +44,7 @@
         </div>
         <div class="row">
             <div class="col gen-info-spacing">
-                Birth Information
+                BIRTH INFORMATION
                 <hr class="gen-info">
             </div>
         </div>
@@ -60,7 +75,7 @@
             
         <div class="row">
             <div class="col gen-info-spacing">
-                Death Information
+                DEATH INFORMATION
                 <hr class="gen-info">
             </div>
         </div>
@@ -77,7 +92,7 @@
         </div>
         <div class="row">
             <div class="col gen-info-spacing">
-                Parent Information
+                PARENT INFORMATION
                 <hr class="gen-info">
             </div>
         </div>
@@ -120,3 +135,10 @@
         <br>
     </div>
 </form>
+
+<div class="container section-border section-border-spacing">
+    <div class="row navigation-row">
+        <a routerLink="/forms/requestor/"><div class="navigation-spacing"><< PREVIOUS</div></a>
+        <a routerLink="/forms/documents/"><div class="navigation-spacing">NEXT >></div></a>
+    </div>
+</div>

@@ -10,12 +10,12 @@ export class BirthFormPagesService {
 
   constructor(fb: FormBuilder) {
     this.formPages = fb.group({
-      /* terms: fb.group({
-        name: fb.control('', Validators.required),
-        age: fb.control('', Validators.required),
-        email: fb.control('', Validators.required)
-      }), */
+      terms: fb.group({
+        signature: fb.control('', Validators.required),
+      }),
       requestor: fb.group({
+        reqReason: fb.control('', Validators.required),
+        reqRelationship: fb.control('', Validators.required),
         firstName: fb.control('', Validators.required),
         middleName: fb.control('', Validators.required),
         lastName: fb.control('', Validators.required),
@@ -30,7 +30,7 @@ export class BirthFormPagesService {
 
         phone: fb.control('', Validators.required),
         email: fb.control('', Validators.required),
-        emailConfirmation: fb.control('', Validators.required)
+        emailConfirm: fb.control('', Validators.required)
       }),
       registrant: fb.group({
         certsReqd: fb.control('', Validators.required),
@@ -61,7 +61,6 @@ export class BirthFormPagesService {
         stateDocFileName: fb.control('', Validators.required)
         //description: fb.control('', Validators.required),
         //length: fb.control('', Validators.required)
-
       }),
       firstDocument: fb.group({
         firstDocTitle: fb.control('', Validators.required),

@@ -1,27 +1,13 @@
-<div class="container section-border section-border-spacing">
-    <div class="row">
-        <div class="col section-hdr">
-            DOCUMENTS
-        </div>
-    </div>
-</div>
 
 <div class="container section-border section-border-spacing">
-    <div class="row">
-        <div class="col certificate-hdr">
-            BIRTH CERTIFICATE
-        </div>
-    </div>
-</div>
-
-<div class="container section-border section-border-spacing">
+    <div class="row review-section">Birth Certificate: Documents</div>
     <div class="row">
         <div class="col-lg-3 showInfo">
             <button (click)="stateDocToggle()" class="btn btn-default btn3d">{{ stateDocBtnName }}</button>
         </div>
         <div *ngIf = "showStateDocForm; else showStateInfo" class="col-lg-9 upload-spacing">
             <ng-container>
-                <form [formGroup]="stateFormGroup" (ngSubmit)="submit()">
+                <form [formGroup]="stateFormGroup" (ngSubmit)="submitForm('stateDocFileName')">
                     <label for="name">Document Title&nbsp;</label>
                     <input 
                         formControlName="stateDocTitle"
@@ -46,9 +32,20 @@
                     </div>
                                 
                     <div *ngIf="stateForm.stateDocFileName.touched && stateForm.stateDocFileName.invalid" class="alert alert-danger">
-                        <div *ngIf="stateForm.stateDocFileName.errors.required">File is required.</div>
+                        <div class="validation" *ngIf="stateForm.stateDocFileName.errors.required">File is required.</div>
                     </div>
                 </form> 
+                <pre>
+                    STATE DOC TITLE
+                    stateForm.stateDocTitle.value: {{ stateForm.stateDocTitle.value }}
+                    stateForm.stateDocTitle.touched: {{ stateForm.stateDocTitle.touched }}
+                    stateForm.stateDocTitle.invalid: {{ stateForm.stateDocTitle.invalid }}
+                    
+                    STATE DOC FILE NAME
+                    stateForm.stateDocFileName.value: {{ stateForm.stateDocFileName.value }}
+                    stateForm.stateDocFileName.touched: {{ stateForm.stateDocFileName.touched }}
+                    stateForm.stateDocFileName.invalid: {{ stateForm.stateDocFileName.invalid }}
+                </pre>
             </ng-container>
         </div> 
         <ng-template #showStateInfo>
@@ -65,34 +62,45 @@
         </div>
         <div *ngIf = "showFirstDocForm; else showFirstInfo" class="col-lg-9 upload-spacing">
             <ng-container>
-                <form [formGroup]="firstFormGroup" (ngSubmit)="submit()">
+                <form [formGroup]="firstFormGroup" (ngSubmit)="submitForm('firstDocFileName')">
                     <label for="name">Document Title&nbsp;</label>
-                        <input 
-                            formControlName="firstDocTitle"
-                            id="firstDocTitle" 
-                            type="text" 
-                            class="input-sm">
-                            &nbsp;&nbsp;
-                      
+                    <input 
+                        formControlName="firstDocTitle"
+                        id="firstDocTitle" 
+                        type="text" 
+                        class="input-sm">
+                        &nbsp;&nbsp;
+                          
                         <label for="file">File</label>
-                        <input 
-                            formControlName="firstDocFileName"
-                            id="firstDocFileName" 
-                            type="file" 
-                            class="form-control-sm"
-                            (change)="onFirstFileChange($event)">
-                                     
-                            <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
-
-                            <div *ngIf="firstForm.firstDocTitle.touched && firstForm.firstDocTitle.invalid" class="alert alert-danger">
-                                <div class="validation" *ngIf="firstForm.firstDocTitle.errors.required">Name is required.</div>
-                                <div class="validation" *ngIf="firstForm.firstDocTitle.errors.minlength">Name should be 3 character.</div>
-                            </div>
-                            
-                            <div *ngIf="firstForm.firstDocFileName.touched && firstForm.firstDocFileName.invalid" class="alert alert-danger">
-                                <div *ngIf="firstForm.firstDocFileName.errors.required">File is required.</div>
-                            </div>
-                </form>         
+                    <input 
+                        formControlName="firstDocFileName"
+                        id="firstDocFileName" 
+                        type="file" 
+                        class="form-control-sm"
+                        (change)="onFirstFileChange($event)">
+                                         
+                    <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
+    
+                    <div *ngIf="firstForm.firstDocTitle.touched && firstForm.firstDocTitle.invalid" class="alert alert-danger">
+                        <div class="validation" *ngIf="firstForm.firstDocTitle.errors.required">Name is required.</div>
+                        <div class="validation" *ngIf="firstForm.firstDocTitle.errors.minlength">Name should be 3 character.</div>
+                    </div>
+                                
+                    <div *ngIf="firstForm.firstDocFileName.touched && firstForm.firstDocFileName.invalid" class="alert alert-danger">
+                        <div class="validation" *ngIf="firstForm.firstDocFileName.errors.required">File is required.</div>
+                    </div>
+                </form> 
+                <pre>
+                    FIRST DOC TITLE
+                    firstForm.stateDocTitle.value: {{ firstForm.firstDocTitle.value }}
+                    firstForm.stateDocTitle.touched: {{ firstForm.firstDocTitle.touched }}
+                    firstForm.stateDocTitle.invalid: {{ firstForm.firstDocTitle.invalid }}
+                    
+                    FIRST DOC FILE NAME
+                    firstForm.stateDocFileName.value: {{ firstForm.firstDocFileName.value }}
+                    firstForm.stateDocFileName.touched: {{ firstForm.firstDocFileName.touched }}
+                    firstForm.stateDocFileName.invalid: {{ firstForm.firstDocFileName.invalid }}
+                </pre>
             </ng-container>
         </div>
         <ng-template #showFirstInfo>
@@ -108,34 +116,45 @@
         </div>
         <div *ngIf = "showSecondDocForm; else showSecondInfo" class="col-lg-9 upload-spacing">
             <ng-container>
-                <form [formGroup]="secondFormGroup" (ngSubmit)="submit()">
+                <form [formGroup]="secondFormGroup" (ngSubmit)="submitForm('secondDocFileName')">
                     <label for="name">Document Title&nbsp;</label>
-                        <input 
-                            formControlName="secondDocTitle"
-                            id="secondDocTitle" 
-                            type="text" 
-                            class="input-sm">
-                            &nbsp;&nbsp;
-                      
+                    <input 
+                        formControlName="secondDocTitle"
+                        id="secondDocTitle" 
+                        type="text" 
+                        class="input-sm">
+                        &nbsp;&nbsp;
+                          
                         <label for="file">File</label>
-                        <input 
-                            formControlName="secondDocFileName"
-                            id="secondDocFileName" 
-                            type="file" 
-                            class="form-control-sm"
-                            (change)="onSecondFileChange($event)">
-                                     
-                            <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
-
-                            <div *ngIf="secondForm.secondDocTitle.touched && secondForm.secondDocTitle.invalid" class="alert alert-danger">
-                                <div class="validation" *ngIf="secondForm.secondDocTitle.errors.required">Name is required.</div>
-                                <div class="validation" *ngIf="secondForm.secondDocTitle.errors.minlength">Name should be 3 character.</div>
-                            </div>
-                            
-                            <div *ngIf="secondForm.secondDocFileName.touched && secondForm.secondDocFileName.invalid" class="alert alert-danger">
-                                <div *ngIf="secondForm.secondDocFileName.errors.required">File is required.</div>
-                            </div>
-                </form>         
+                    <input 
+                        formControlName="secondDocFileName"
+                        id="secondDocFileName" 
+                        type="file" 
+                        class="form-control-sm"
+                        (change)="onSecondFileChange($event)">
+                                         
+                    <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
+    
+                    <div *ngIf="secondForm.secondDocTitle.touched && secondForm.secondDocTitle.invalid" class="alert alert-danger">
+                        <div class="validation" *ngIf="secondForm.secondDocTitle.errors.required">Name is required.</div>
+                        <div class="validation" *ngIf="secondForm.secondDocTitle.errors.minlength">Name should be 3 character.</div>
+                    </div>
+                                
+                    <div *ngIf="secondForm.secondDocFileName.touched && secondForm.secondDocFileName.invalid" class="alert alert-danger">
+                        <div class="validation" *ngIf="secondForm.secondDocFileName.errors.required">File is required.</div>
+                    </div>
+                </form> 
+                <pre>
+                    SECOND DOC TITLE
+                    secondForm.secondDocTitle.value: {{ secondForm.secondDocTitle.value }}
+                    secondForm.secondDocTitle.touched: {{ secondForm.secondDocTitle.touched }}
+                    secondForm.secondDocTitle.invalid: {{ secondForm.secondDocTitle.invalid }}
+                    
+                    SECOND DOC FILE NAME
+                    secondForm.secondDocFileName.value: {{ secondForm.secondDocFileName.value }}
+                    secondForm.secondDocFileName.touched: {{ secondForm.secondDocFileName.touched }}
+                    secondForm.secondDocFileName.invalid: {{ secondForm.secondDocFileName.invalid }}
+                </pre>
             </ng-container>
         </div>
         <ng-template #showSecondInfo>
@@ -145,13 +164,5 @@
                     Click here if you do not have digital copy of document available (office will contact you for more information)</span></p>
         </ng-template>
     <br>
-    </div>
-</div>
-
-
-<div class="container section-border section-border-spacing">
-    <div class="row navigation-row">
-        <a routerLink="/forms/registrant/"><div class="navigation-spacing"><< PREVIOUS</div></a>
-        <a routerLink="/forms/review/"><div class="navigation-spacing">NEXT >></div></a>
     </div>
 </div>
