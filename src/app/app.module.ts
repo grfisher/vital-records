@@ -18,13 +18,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes = [
   { path: '', redirectTo: 'shopping-cart', pathMatch: 'full' },
+  { path: 'shopping-cart', component: ShoppingCartComponent },
   {
-    path: 'forms',
+    path: 'birthForms',
     loadChildren: () => 
       import('./cert-birth/cert-birth.module').then(m => m.CertBirthModule)
-    },
-  { path: 'shopping-cart', component: ShoppingCartComponent },
-  { path: '**', redirectTo: 'forms' }
+  },
+  {
+    path: 'deceasedForms',
+    loadChildren: () => 
+      import('./cert-deceased/cert-deceased.module').then(m => m.CertDeceasedModule)
+  },
+  { path: '**', redirectTo: 'shopping-cart' }
 ]
 
 @NgModule({

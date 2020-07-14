@@ -10,6 +10,10 @@ export class BirthFormPagesService {
 
   constructor(fb: FormBuilder) {
     this.formPages = fb.group({
+      certificate: fb.group({
+        certType: fb.control('', Validators.required),
+        certQty: fb.control('', Validators.required),
+      }),
       terms: fb.group({
         signature: fb.control('', Validators.required),
       }),

@@ -13,4 +13,8 @@ export class ShoppingCartComponent implements OnInit {
 
   }
 
+  selectCertificate(certificate) {
+    alert("BOOOOOO!!!");
+  }
+
 }
