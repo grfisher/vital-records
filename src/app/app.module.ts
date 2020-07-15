@@ -19,6 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes = [
   { path: '', redirectTo: 'shopping-cart', pathMatch: 'full' },
   { path: 'shopping-cart', component: ShoppingCartComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'thank-you', component: ThankYouComponent },
   {
     path: 'birthForms',
     loadChildren: () => 

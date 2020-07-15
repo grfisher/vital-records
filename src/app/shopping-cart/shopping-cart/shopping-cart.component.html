@@ -42,7 +42,7 @@
                 <p class="card-text">
                     Death certificates are typically needed after the passing of a loved one.
                 </p>
-                <a routerLink="/" class="btn btn-outline-primary">Order</a>
+                <a [routerLink]="['/birthForms/terms/']" (click)="selectCertificate('deceased')" class="btn btn-outline-primary">Order</a>
             </div>
         </div>
         <div class="col-4-lg ml-3 vcenter">
