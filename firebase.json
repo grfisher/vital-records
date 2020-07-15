@@ -28,6 +28,21 @@
           "destination": "/index.html"
         }
       ]
+    },
+    {
+      "target": "vital-records",
+      "public": "dist/vital-records",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }
