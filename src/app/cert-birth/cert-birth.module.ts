@@ -34,7 +34,7 @@ const routes = [
     children: [
       { path: '', redirectTo: 'shopping' },
       {
-        path: 'shopping',
+        path: '/shopping', name: 'Shopping',
         component: ShoppingCartComponent
       },
       { path: 'terms', redirectTo: 'terms' },

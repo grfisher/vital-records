@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ControlContainer, FormGroup, FormControl } from '@angular/forms';
+import { BirthFormPagesService } from 'src/app/cert-birth/birth-form-pages.service';
+import { DeceasedFormPagesService } from 'src/app/cert-deceased/deceased-form-pages.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  birthFormGroup: any;
+  deceasedFormGroup: any;
 
-  ngOnInit(): void {
+  certType: string;
+  certQty: any;
+
+  constructor(
+    birthFps: BirthFormPagesService, 
+    deceasedFps: DeceasedFormPagesService) {
+    this.birthFormGroup = birthFps.formPages.controls['certificate'];
+    this.deceasedFormGroup = deceasedFps.formPages.controls['certificate'];
   }
 
+  ngOnInit() {
+    this.certType = this.birthFormGroup.controls['certType'].value;
+    this.certQty = this.birthFormGroup.controls['certQty'].value;
+  }
 }

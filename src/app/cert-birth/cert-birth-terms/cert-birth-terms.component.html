@@ -48,7 +48,9 @@
             <p>*By signing, I have read and understood that there are penalties for obtaining a 
             record under false pretenses.</p>
             <div>
-                <app-signature-pad></app-signature-pad>
+                <app-signature-pad [sigFormGroup]="signatureFormGroup"></app-signature-pad>
+                <input hidden class="form-control form-control-sm" name="signature" id="signature" formControlName="signature">
+                
             </div>
         </div>
     </div>
@@ -57,6 +59,6 @@
 <div class="container section-border section-border-spacing">
     <div class="row navigation-row">
         <a routerLink="/"><div class="navigation-spacing">CANCEL ORDER</div></a>
-        <a routerLink="/birthForms/requestor/"><div class="navigation-spacing">NEXT >></div></a>
+        <a (click)="validateForm()"><div class="navigation-spacing">NEXT >></div></a>
     </div>
 </div>

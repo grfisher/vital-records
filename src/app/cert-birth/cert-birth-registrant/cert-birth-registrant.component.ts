@@ -10,10 +10,10 @@ export class CertBirthRegistrantComponent implements OnInit {
 
   registrantFormGroup: FormGroup;
 
-    listOfOptions: [
+    /* listOfOptions: [
       {'name': 'some name 1', ID: 'D1', 'checked': true},
       {'name': 'some name 2', ID: 'D2', 'checked': false}
-    ];
+    ]; */
 
     constructor(private containerForm: ControlContainer) { }
 

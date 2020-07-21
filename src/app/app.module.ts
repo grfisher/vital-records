@@ -32,8 +32,13 @@ const routes = [
     loadChildren: () => 
       import('./cert-deceased/cert-deceased.module').then(m => m.CertDeceasedModule)
   },
+  {
+    path: 'marriageForms',
+    loadChildren: () => 
+      import('./cert-marriage/cert-marriage.module').then(m => m.CertMarriageModule)
+  },
   { path: '**', redirectTo: 'shopping-cart' }
-]
+];
 
 @NgModule({
   declarations: [
@@ -44,7 +49,7 @@ const routes = [
     ThankYouComponent,
     FooterComponent,
     FooterInfoComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     BrowserModule,

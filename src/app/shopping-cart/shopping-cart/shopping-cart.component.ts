@@ -20,13 +20,13 @@ export class ShoppingCartComponent implements OnInit {
   selectCertificate(certificate) {
 
     if (certificate === 'birth') {
-      this.forms.get('certificate').get('certType').setValue('birth');
+      this.forms.get('certificate').get('certType').setValue('birth certificate');
       this.forms.get('certificate').get('certQty').setValue('1');
     } else if (certificate === 'deceased') {
-      this.forms.get('certificate').get('certType').setValue('deceased');
+      this.forms.get('certificate').get('certType').setValue('death certificate');
       this.forms.get('certificate').get('certQty').setValue('1');
     } else if (certificate === 'marriage') {
-      this.forms.get('certificate').get('certType').setValue('marriage');
+      this.forms.get('certificate').get('certType').setValue('marriage certificate');
       this.forms.get('certificate').get('certQty').setValue('1');
     }
   }

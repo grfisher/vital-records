@@ -11,5 +11,4 @@ export class DeceasedFormPagesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

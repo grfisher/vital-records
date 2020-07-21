@@ -1,8 +1,10 @@
 <div class="signature-pad">
   <div class="signature-pad--body">
-    <canvas #sPad width="600" height="75" style="touch-action: none;"></canvas>
+    <canvas #sPad width="500" height="125" style="touch-action: none;"></canvas>
+    <div class="alert alert-danger" *ngIf="sigFormGroup.controls['signature'].errors?.required">Please sign above and click Save.</div>
   </div>
 </div>
+
 <br>
 <br>
 <section class="container-fluid">
@@ -18,7 +20,3 @@
       </div>
     </div>
 </section>
-
-<form [formGroup]="signatureFormGroup">
-  <input hidden class="form-control form-control-sm" name="signature" id="signature" formControlName="signature">
-</form>

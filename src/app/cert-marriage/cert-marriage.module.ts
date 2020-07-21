@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { CertDeceasedTermsComponent } from './cert-deceased-terms/cert-deceased-terms.component';
-import { DeceasedFormPagesComponent } from './deceased-form-pages.component';
+import { CertMarriageTermsComponent } from './cert-marriage-terms/cert-marriage-terms.component';
+import { MarriageFormPagesComponent } from './marriage-form-pages.component';
 import { HttpClientModule } from '@angular/common/http';
 
 const routes = [
   {
     path: '',
-    component: CertDeceasedTermsComponent,
+    component: CertMarriageTermsComponent,
     children: [
       { path: '', redirectTo: 'shopping' },
       { path: 'terms', redirectTo: 'terms' },
       {
         path: 'terms',
-        component: CertDeceasedTermsComponent
+        component: CertMarriageTermsComponent
       },
       { path: '**', redirectTo: 'shopping' }
     ]
@@ -31,8 +31,8 @@ const routes = [
         RouterModule.forChild(routes)
       ],
       declarations: [
-        CertDeceasedTermsComponent
+        CertMarriageTermsComponent
       ],
         providers: [],
 })
-export class CertDeceasedModule { }
+export class CertMarriageModule { }

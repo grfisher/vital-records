@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild, Input} from '@angular/core';
 import SignaturePad from 'signature_pad';
 import { FormGroup, ControlContainer } from '@angular/forms';
 
@@ -9,17 +9,16 @@ import { FormGroup, ControlContainer } from '@angular/forms';
 })
 export class SignaturePadComponent implements OnInit, AfterViewInit {
   @ViewChild('sPad', {static: true}) signaturePadElement;
+  @Input() sigFormGroup: FormGroup;
   signaturePad: any;
   signature: any;
-  signatureFormGroup: FormGroup;
-  test: any;
 
   constructor(private containerForm: ControlContainer) { }
 
 
 
   ngOnInit(): void {
-    this.signatureFormGroup = this.containerForm.control.get('terms') as FormGroup;
+    this.sigFormGroup = this.containerForm.control.get('terms') as FormGroup;
   }
 
   ngAfterViewInit(): void {
@@ -76,7 +75,7 @@ export class SignaturePadComponent implements OnInit, AfterViewInit {
       const dataURL = this.signaturePad.toDataURL("image/png");
       this.signature = dataURL;
       this.download(dataURL, 'signature.png');
-      this.signatureFormGroup.get('signature').setValue(this.signature);
+      this.sigFormGroup.get('signature').setValue(this.signature);
     }
   }
 }

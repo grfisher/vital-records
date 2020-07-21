@@ -49,7 +49,7 @@ export class BirthFormPagesService {
         county: fb.control('', Validators.required),
         state: fb.control('', Validators.required),
 
-        deceased: fb.control('', Validators.required),
+        deceased: fb.control(false),
         firstName1: fb.control('', Validators.required),
         middleName1: fb.control('', Validators.required),
         lastName1: fb.control('', Validators.required),

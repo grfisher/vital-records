@@ -10,26 +10,43 @@ import { CertBirthReviewComponent } from './cert-birth/cert-birth-review/cert-bi
 import { CheckoutComponent } from './checkout/checkout/checkout.component';
 import { CartComponent } from './checkout/cart/cart.component';
 import { ThankYouComponent } from './checkout/thank-you/thank-you.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-const routes: Routes = [
-  { path: 'thank-you', component: ThankYouComponent },
+const routes = [
+  { path: '', redirectTo: 'shopping-cart', pathMatch: 'full' },
+  { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
-  { path: 'review', component: CertBirthReviewComponent },
-  { path: 'documents', component: CertBirthDocumentsComponent },
-  { path: 'registrant', component: CertBirthRegistrantComponent },
-  { path: 'requestor', component: CertBirthRequestorNavComponent },
-  { path: 'terms', component: CertBirthTermsComponent },
-  { path: 'shopping-cart', component: ShoppingCartComponent },
-  { path: '',   redirectTo: '/shopping-cart', pathMatch: 'full' },
-  { path: '**', component: ShoppingCartComponent }
+  { path: 'thank-you', component: ThankYouComponent },
+  {
+    path: 'birthForms',
+    loadChildren: () => 
+      import('./cert-birth/cert-birth.module').then(m => m.CertBirthModule)
+  },
+  {
+    path: 'deceasedForms',
+    loadChildren: () => 
+      import('./cert-deceased/cert-deceased.module').then(m => m.CertDeceasedModule)
+  },
+  {
+    path: 'marriageForms',
+    loadChildren: () => 
+      import('./cert-marriage/cert-marriage.module').then(m => m.CertMarriageModule)
+  },
+  { path: '**', redirectTo: 'shopping-cart' }
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
       scrollPositionRestoration: 'enabled', // Add options right here
-    })
+    }),
+    BrowserModule,
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [RouterModule]
 })

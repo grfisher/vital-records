@@ -28,7 +28,7 @@
                     Birth certificates are needed for a variety of reasons, including 
                     shchool/sports, passports, and driver license.
                 </p>
-                <a [routerLink]="['/birthForms/terms/']" (click)="selectCertificate('birth')" class="btn btn-outline-primary">Order</a>
+                <a routerLink="/birthForms/terms/" (click)="selectCertificate('birth')" class="btn btn-outline-primary">Order</a>
             </div>
         </div>
         <div class="col-4-lg ml-3 vcenter">
@@ -42,7 +42,7 @@
                 <p class="card-text">
                     Death certificates are typically needed after the passing of a loved one.
                 </p>
-                <a [routerLink]="['/birthForms/terms/']" (click)="selectCertificate('deceased')" class="btn btn-outline-primary">Order</a>
+                <a routerLink='/deceasedForms/terms/' (click)="selectCertificate('deceased')" class="btn btn-outline-primary">Order</a>
             </div>
         </div>
         <div class="col-4-lg ml-3 vcenter">
@@ -56,7 +56,7 @@
                 <p class="card-text">
                     COMING SOON
                 </p>
-                <a routerLink="/" class="btn btn-outline-primary">Marriage Certificate</a>
+                <a routerLink="/marriageForms/terms/" class="btn btn-outline-primary">Marriage Certificate</a>
             </div>
         </div>
     </div>
