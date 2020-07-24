@@ -19,16 +19,10 @@ export class CertBirthTermsComponent implements OnInit {
   }
 
   validateForm() {
-
-    //this.signatureFormGroup.markAsTouched();
-    this.signatureFormGroup.controls['signature'].updateValueAndValidity();
     if (this.signatureFormGroup.valid === false) {
-      this.signatureFormGroup.controls['signature'].updateValueAndValidity();
       this.router.navigate(['/birthForms/terms']);
     } else {
       this.router.navigate(['/birthForms/requestor']);
     }
-
-    this.signatureValue = this.signatureFormGroup.get('signature');
   }
 }

@@ -24,22 +24,31 @@
         </div>
         <div class="row">
             <div class="form-group-spacing">
-                <label for="certsReqd"># Certificates Requested</label>
-                <input class="form-control form-control-sm twochar" maxlength="2" name="certsReqd" id="certsReqd" type="text" formControlName="certsReqd">
+                <label for="regCertsReqd"># Certificates Requested</label>
+                <input autofocus class="form-control form-control-sm twochar" maxlength="2" name="regCertsReqd" id="regCertsReqd" type="text" formControlName="regCertsReqd">
+                <div *ngIf="registrantFormGroup.controls['regCertsReqd'].touched && registrantFormGroup.controls['regCertsReqd'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="registrantFormGroup.controls['regCertsReqd'].errors.required">Certificates requested required.</div>
+                </div>
             </div>
         </div>
         <div class="row vfifteen">
             <div class="form-group-spacing">
-                <label for="firstName">First Name</label>
-                <input class="form-control form-control-sm" name="firstName" id="firstName" type="text" formControlName="firstName">
+                <label for="regFirstName">First Name</label>
+                <input class="form-control form-control-sm" name="regFirstName" id="regFirstName" type="text" formControlName="regFirstName">
+                <div *ngIf="registrantFormGroup.controls['regFirstName'].touched && registrantFormGroup.controls['regFirstName'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="registrantFormGroup.controls['regFirstName'].errors.required">First name required.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
-                <label for="middleName">Middle Name</label>
-                <input class="form-control form-control-sm" name="middleName" id="middleName" type="text" formControlName="middleName">
+                <label for="regMiddleName">Middle Name</label>
+                <input class="form-control form-control-sm" name="regMiddleName" id="regMiddleName" type="text" formControlName="regMiddleName">
             </div>
             <div class="form-group-spacing">
-                <label for="lastName">Last Name</label>
-                <input class="form-control form-control-sm" name="lastName" id="lastName" type="text" formControlName="lastName">
+                <label for="regLastName">Last Name</label>
+                <input class="form-control form-control-sm" name="regLastName" id="regLastName" type="text" formControlName="regLastName">
+                <div *ngIf="registrantFormGroup.controls['regLastName'].touched && registrantFormGroup.controls['regLastName'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="registrantFormGroup.controls['regLastName'].errors.required">Last name required.</div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -50,26 +59,41 @@
         </div>
         <div class="row vfifteen">
             <div class="form-group-spacing">
-                <label for="dob">Date Of Birth</label>
-                <input class="form-control form-control-sm" name="dob" id="dob" type="text" formControlName="dob">
+                <label for="regDob">Date Of Birth</label>
+                <input class="form-control form-control-sm" name="regDob" id="regDob" type="text" formControlName="regDob">
+                <div *ngIf="registrantFormGroup.controls['regDob'].touched && registrantFormGroup.controls['regDob'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="registrantFormGroup.controls['regDob'].errors.required">Date of birth required.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
-                <label for="genderId">Gender Identity</label>
-                <input class="form-control form-control-sm" name="genderId" id="genderId" type="text" formControlName="genderId">
+                <label for="regGenderId">Gender Identity</label>
+                <input class="form-control form-control-sm" name="regGenderId" id="regGenderId" type="text" formControlName="regGenderId">
+                <div *ngIf="registrantFormGroup.controls['regGenderId'].touched && registrantFormGroup.controls['regGenderId'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="registrantFormGroup.controls['regGenderId'].errors.required">Gender ID required.</div>
+                </div>
             </div>
         </div>
             <div class="row vfifteen">
                 <div class="form-group-spacing">
-                    <label for="city">City</label>
-                    <input class="form-control form-control-sm" name="city" id="city" type="text" formControlName="city">
+                    <label for="regCity">City</label>
+                    <input class="form-control form-control-sm" name="regCity" id="regCity" type="text" formControlName="regCity">
+                    <div *ngIf="registrantFormGroup.controls['regCity'].touched && registrantFormGroup.controls['regCity'].invalid" class="alert alert-danger">
+                        <div class="validation" *ngIf="registrantFormGroup.controls['regCity'].errors.required">City required.</div>
+                    </div>
                 </div>
                 <div class="form-group-spacing col-xs-1">
-                    <label for="county">County</label>
-                    <input class="form-control form-control-sm" name="county" id="county" type="text" formControlName="county">
+                    <label for="regCounty">County</label>
+                    <input class="form-control form-control-sm" name="regCounty" id="regCounty" type="text" formControlName="regCounty">
+                    <div *ngIf="registrantFormGroup.controls['regCounty'].touched && registrantFormGroup.controls['regCounty'].invalid" class="alert alert-danger">
+                        <div class="validation" *ngIf="registrantFormGroup.controls['regCounty'].errors.required">County required.</div>
+                    </div>
                 </div>
                 <div class="form-group-spacing col-xs-1">
-                    <label for="state">State</label>
-                    <input class="form-control form-control-sm twochar" maxlength="2" name="state" id="state" type="text" formControlName="state">
+                    <label for="regState">State</label>
+                    <input class="form-control form-control-sm twochar" maxlength="2" name="regState" id="regState" type="text" formControlName="regState">
+                    <div *ngIf="registrantFormGroup.controls['regState'].touched && registrantFormGroup.controls['regState'].invalid" class="alert alert-danger">
+                        <div class="validation" *ngIf="registrantFormGroup.controls['regState'].errors.required">State required.</div>
+                    </div>
                 </div>
             </div>
             
@@ -83,11 +107,14 @@
             <div class="col gen-info-spacing">
                 Is this person deceased?
                 <div class="radio-inline">
-                    <input type="radio" value=false formControlName="deceased"/>
+                    <input type="radio" value=false formControlName="regDeceased" name="regDeceased" id="regDeceased"/>
                     <label class="radio-label"> Yes</label>&nbsp;&nbsp;
-                    <input type="radio" value=true formControlName="deceased" />
+                    <input type="radio" value=true formControlName="regDeceased" name="regDeceased" id="regDeceased"/>
                     <label class="radio-label">No</label>
-                </div>          
+                </div>   
+                <div *ngIf="registrantFormGroup.controls['regDeceased'].touched && registrantFormGroup.controls['regDeceased'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="registrantFormGroup.controls['regDeceased'].errors.required">Deceased required.</div>
+                </div>       
             </div>
         </div>
         <div class="row">
@@ -98,38 +125,50 @@
         </div>
         <div class="row vfifteen">
             <div class="form-group-spacing">
-                <label for="firstName1">Parent 1 First Name</label>
-                <input class="form-control form-control-sm" name="firstName1" id="firstName1" type="text" formControlName="firstName1">
+                <label for="regFirstName1">Parent 1 First Name</label>
+                <input class="form-control form-control-sm" name="regFirstName1" id="regFirstName1" type="text" formControlName="regFirstName1">
+                <div *ngIf="registrantFormGroup.controls['regFirstName1'].touched && registrantFormGroup.controls['regFirstName1'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="registrantFormGroup.controls['regFirstName1'].errors.required">First name required.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
-                <label for="middleName1">Parent 1 Middle Name</label>
-                <input class="form-control form-control-sm" name="middleName1" id="middleName1" type="text" formControlName="middleName1">
+                <label for="regMiddleName1">Parent 1 Middle Name</label>
+                <input class="form-control form-control-sm" name="regMiddleName1" id="regMiddleName1" type="text" formControlName="regMiddleName1">
             </div>
             <div class="form-group-spacing">
-                <label for="lastName1">Parent 1 Last Name</label>
-                <input class="form-control form-control-sm" name="lastName1" id="lastName1" type="text" formControlName="lastName1">
+                <label for="regLastName1">Parent 1 Last Name</label>
+                <input class="form-control form-control-sm" name="regLastName1" id="regLastName1" type="text" formControlName="regLastName1">
+                <div *ngIf="registrantFormGroup.controls['regLastName1'].touched && registrantFormGroup.controls['regLastName1'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="registrantFormGroup.controls['regLastName1'].errors.required">Last name required.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
                 <label for="suffix1">Parent 1 Suffix</label>
-                <input class="form-control form-control-sm" name="suffix1" id="suffix1" type="text" formControlName="suffix1">
+                <input class="form-control form-control-sm" name="regSuffix1" id="regSuffix1" type="text" formControlName="regSuffix1">
             </div>
         </div>
         <div class="row vfifteen">
             <div class="form-group-spacing">
-                <label for="firstName2">Parent 2 First Name</label>
-                <input class="form-control form-control-sm" name="firstName2" id="firstName2" type="text" formControlName="firstName2">
+                <label for="regFirstName2">Parent 2 First Name</label>
+                <input class="form-control form-control-sm" name="regFirstName2" id="regFirstName2" type="text" formControlName="regFirstName2">
+                <div *ngIf="registrantFormGroup.controls['regFirstName2'].touched && registrantFormGroup.controls['regFirstName2'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="registrantFormGroup.controls['regFirstName2'].errors.required">First name required.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
-                <label for="middleName2">Parent 2 Middle Name</label>
-                <input class="form-control form-control-sm" name="middleName2" id="middleName2" type="text" formControlName="middleName2">
+                <label for="regMiddleName2">Parent 2 Middle Name</label>
+                <input class="form-control form-control-sm" name="regMiddleName2" id="regMiddleName2" type="text" formControlName="regMiddleName2">
             </div>
             <div class="form-group-spacing">
-                <label for="lastName2">Parent 2 Last Name</label>
-                <input class="form-control form-control-sm" name="lastName2" id="lastName2" type="text" formControlName="lastName2">
+                <label for="regLastName2">Parent 2 Last Name</label>
+                <input class="form-control form-control-sm" name="regLastName2" id="regLastName2" type="text" formControlName="regLastName2">
+                <div *ngIf="registrantFormGroup.controls['regLastName2'].touched && registrantFormGroup.controls['regLastName2'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="registrantFormGroup.controls['regLastName2'].errors.required">Last name required.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
                 <label for="suffix2">Parent 2 Suffix</label>
-                <input class="form-control form-control-sm" name="suffix2" id="suffix2" type="text" formControlName="suffix2">
+                <input class="form-control form-control-sm" name="regSuffix2" id="regSuffix2" type="text" formControlName="regSuffix2">
             </div>
         </div>
         <br>
@@ -139,6 +178,6 @@
 <div class="container section-border section-border-spacing">
     <div class="row navigation-row">
         <a routerLink="/birthForms/requestor/"><div class="navigation-spacing"><< PREVIOUS</div></a>
-        <a routerLink="/birthForms/documents/"><div class="navigation-spacing">NEXT >></div></a>
+        <a (click)="validateForm()"><div class="navigation-spacing">NEXT >></div></a>
     </div>
 </div>

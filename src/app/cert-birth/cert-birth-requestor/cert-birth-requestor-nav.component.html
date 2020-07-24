@@ -25,11 +25,19 @@
         <div class="row">
             <div class="form-group-spacing">
                 <label for="reqReason">Reason For Request</label>
-                <input class="form-control form-control-sm" name="reqReason" id="reqReason" type="text" formControlName="reqReason">
+                <input autofocus class="form-control form-control-sm" name="reqReason" id="reqReason" type="text" formControlName="reqReason">
+                <div *ngIf="requestorFormGroup.controls['reqReason'].touched && requestorFormGroup.controls['reqReason'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqReason'].errors.required">Request reason is required is required.</div>
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqReason'].errors.minlength">Your response must be greater than 3 characters long.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
                 <label for="reqRelationship">Relationship To Requestor</label>
                 <input class="form-control form-control-sm" name="reqRelationship" id="reqRelationship" type="text" formControlName="reqRelationship">
+                <div *ngIf="requestorFormGroup.controls['reqRelationship'].touched && requestorFormGroup.controls['reqRelationship'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqRelationship'].errors.required">Relationship to person for whom you are requesting certificate required.</div>
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqRelationship'].errors.minlength">Your response must be greater than 3 characters long.</div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -40,61 +48,85 @@
         </div>
         <div class="row">
             <div class="form-group-spacing">
-                <label for="firstName">First Name</label>
-                <input class="form-control form-control-sm" name="firstName" id="firstName" type="text" formControlName="firstName">
+                <label for="reqFirstName">First Name</label>
+                <input class="form-control form-control-sm" name="reqFirstName" id="reqFirstName" type="text" formControlName="reqFirstName">
+                <div *ngIf="requestorFormGroup.controls['reqFirstName'].touched && requestorFormGroup.controls['reqFirstName'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqFirstName'].errors.required">First name required.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
-                <label for="middleName">Middle Name</label>
-                <input class="form-control form-control-sm" name="middleName" id="middleName" type="text" formControlName="middleName">
+                <label for="reqMiddleName">Middle Name</label>
+                <input class="form-control form-control-sm" name="reqMiddleName" id="reqMiddleName" type="text" formControlName="reqMiddleName">
             </div>
             <div class="form-group-spacing">
-                <label for="lastName">Last Name</label>
-                <input class="form-control form-control-sm" name="lastName" id="lastName" type="text" formControlName="lastName">
+                <label for="reqLastName">Last Name</label>
+                <input class="form-control form-control-sm" name="reqLastName" id="reqLastName" type="text" formControlName="reqLastName">
+                <div *ngIf="requestorFormGroup.controls['reqLastName'].touched && requestorFormGroup.controls['reqLastName'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqLastName'].errors.required">Last name required.</div>
+                </div>
             </div>
         </div>
         <div class="row vfifteen">
             <div class="col">    
-                <label for="address1">Address Line 1</label>
-                <input class="form-control form-control-sm" name="address1" id="address1" type="text" formControlName="address1">
+                <label for="reqAddress1">Address Line 1</label>
+                <input class="form-control form-control-sm" name="reqAddress1" id="reqAddress1" type="text" formControlName="reqAddress1">
+                <div *ngIf="requestorFormGroup.controls['reqAddress1'].touched && requestorFormGroup.controls['reqAddress1'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqAddress1'].errors.required">Address required.</div>
+                </div>
             </div>
         </div>
         <div class="row vfifteen">
             <div class="col">    
-                <label for="address2">Address Line </label>
-                <input class="form-control form-control-sm" name="address2" id="address2" type="text" formControlName="address2">
+                <label for="reqAddress2">Address Line 2</label>
+                <input class="form-control form-control-sm" name="reqAddress2" id="reqAddress2" type="text" formControlName="reqAddress2">
             </div>
         </div>
         <div class="row vfifteen">
             <div class="form-group-spacing">
-                <label for="city">City</label>
-                <input class="form-control form-control-sm" name="city" id="city" type="text" formControlName="city">
+                <label for="reqCity">City</label>
+                <input class="form-control form-control-sm" name="reqCity" id="reqCity" type="text" formControlName="reqCity">
+                <div *ngIf="requestorFormGroup.controls['reqCity'].touched && requestorFormGroup.controls['reqCity'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqCity'].errors.required">City required.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
-                <label for="county">County</label>
-                <input class="form-control form-control-sm" name="county" id="county" type="text" formControlName="county">
+                <label for="reqCounty">County</label>
+                <input class="form-control form-control-sm" name="reqCounty" id="reqCounty" type="text" formControlName="reqCounty">
             </div>
             <div class="form-group-spacing">
-                <label for="state">State</label>
-                <input class="form-control form-control-sm twochar" maxlength="2" name="state" id="state" type="text" formControlName="state">
+                <label for="reqState">State</label>
+                <input class="form-control form-control-sm twochar" maxlength="2" name="reqState" id="reqState" type="text" formControlName="reqState">
+                <div *ngIf="requestorFormGroup.controls['reqState'].touched && requestorFormGroup.controls['reqState'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqState'].errors.required">State required.</div>
+                </div>
             </div>
             <div class="form-group-spacing col-xs-1">
-                <label for="country">Country</label>
-                <input class="form-control form-control-sm" maxlength="12" name="country" id="country" type="text" formControlName="country">
+                <label for="reqCountry">Country</label>
+                <input class="form-control form-control-sm" maxlength="12" name="reqCountry" id="reqCountry" type="text" formControlName="reqCountry">
+                <div *ngIf="requestorFormGroup.controls['reqCountry'].touched && requestorFormGroup.controls['reqCountry'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqCountry'].errors.required">Country required.</div>
+                </div>
             </div>
             <div></div>
         </div>
         <div class="row vfifteen">
             <div class="form-group-spacing">
-                <label for="phone">Phone Number</label>
-                <input class="form-control form-control-sm" name="phone" id="phone" type="text" formControlName="phone">
+                <label for="reqPhone">Phone Number</label>
+                <input class="form-control form-control-sm" name="reqPhone" id="reqPhone" type="text" formControlName="reqPhone">
+                <div *ngIf="requestorFormGroup.controls['reqPhone'].touched && requestorFormGroup.controls['reqPhone'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqPhone'].errors.required">Phone required.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
-                <label for="email">Email</label>
-                <input class="form-control form-control-sm" name="email" id="email" type="text" formControlName="email">
+                <label for="reqEmail">Email</label>
+                <input class="form-control form-control-sm" name="reqEmail" id="reqEmail" type="text" formControlName="reqEmail">
+                <div *ngIf="requestorFormGroup.controls['reqEmail'].touched && requestorFormGroup.controls['reqEmail'].invalid" class="alert alert-danger">
+                    <div class="validation" *ngIf="requestorFormGroup.controls['reqEmail'].errors.required">Email required.</div>
+                </div>
             </div>
             <div class="form-group-spacing">
-                <label for="emailConfirm">Email Confirmation</label>
-                <input class="form-control form-control-sm" name="emailConfirm" id="emailConfirm" type="text" formControlName="emailConfirm">
+                <label for="reqEmailConfirm">Email Confirmation</label>
+                <input class="form-control form-control-sm" name="reqEmailConfirm" id="reqEmailConfirm" type="text" formControlName="reqEmailConfirm">
             </div>
         </div>
         <br>
@@ -103,6 +135,6 @@
 <div class="container section-border section-border-spacing">
     <div class="row navigation-row">
         <a routerLink="/birthForms/terms/"><div class="navigation-spacing"><< PREVIOUS</div></a>
-        <a routerLink="/birthForms/registrant/">NEXT >></a>
+        <a (click)="validateForm()"><div class="navigation-spacing">NEXT >></div></a>
     </div>
 </div>

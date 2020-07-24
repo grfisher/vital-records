@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, ControlContainer } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cert-birth-registrant-nav',
@@ -10,14 +11,22 @@ export class CertBirthRegistrantNavComponent implements OnInit {
 
   registrantFormGroup: FormGroup;
 
-    /* listOfOptions: [
-      {'name': 'some name 1', ID: 'D1', 'checked': true},
-      {'name': 'some name 2', ID: 'D2', 'checked': false}
-    ]; */
-
-    constructor(private containerForm: ControlContainer) { }
+  constructor(private containerForm: ControlContainer, @Inject(Router) private router: Router) { }
 
   ngOnInit() {
     this.registrantFormGroup = this.containerForm.control.get('registrant') as FormGroup;
+  }
+
+  validateForm() {
+    this.registrantFormGroup.markAllAsTouched();
+    this.registrantFormGroup.updateValueAndValidity({ onlySelf: true });
+
+    if (this.registrantFormGroup.valid === false) {
+      alert('/birthForms/registrant');
+      this.router.navigate(['/birthForms/registrant']);
+    } else { 
+      alert('/birthForms/documents');
+      this.router.navigate(['/birthForms/documents']);
+    }
   }
 }
