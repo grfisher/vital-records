@@ -19,13 +19,11 @@ export class CertBirthRequestorNavComponent implements OnInit {
 
   validateForm() {
     this.requestorFormGroup.markAllAsTouched();
-    this.requestorFormGroup.updateValueAndValidity({ onlySelf: false });
+    this.requestorFormGroup.updateValueAndValidity({ onlySelf: true });
 
     if (this.requestorFormGroup.valid === false) {
-      alert('/birthForms/requestor');
       this.router.navigate(['/birthForms/requestor']);
-    } else {
-      alert('/birthForms/registrant');
+    } else { 
       this.router.navigate(['/birthForms/registrant']);
     }
   }

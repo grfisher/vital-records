@@ -24,7 +24,7 @@
             </div>
             <div class="form-group-spacing">
                 <label for="lastName">Last Name</label>
-                <input class="form-control form-control-sm" name="lastName" id="lastName" type="text" formControlName="lastName">
+                <input class="form-control form-control-sm" name="regLastName" id="regLastName" type="text" formControlName="regLastName">
             </div>
         </div>
         <div class="row">
@@ -35,26 +35,26 @@
         </div>
         <div class="row vfifteen">
             <div class="form-group-spacing">
-                <label for="dob">Date Of Birth</label>
-                <input class="form-control form-control-sm" name="dob" id="dob" type="text" formControlName="dob">
+                <label for="regDob">Date Of Birth</label>
+                <input class="form-control form-control-sm" name="regDob" id="regDob" type="text" formControlName="regDob">
             </div>
             <div class="form-group-spacing">
-                <label for="genderId">Gender Identity</label>
-                <input class="form-control form-control-sm" name="genderId" id="genderId" type="text" formControlName="genderId">
+                <label for="regGenderId">Gender Identity</label>
+                <input class="form-control form-control-sm" name="regGenderId" id="regGenderId" type="text" formControlName="regGenderId">
             </div>
         </div>
             <div class="row vfifteen">
                 <div class="form-group-spacing">
-                    <label for="city">City</label>
-                    <input class="form-control form-control-sm" name="city" id="city" type="text" formControlName="city">
+                    <label for="regCity">City</label>
+                    <input class="form-control form-control-sm" name="regCity" id="regCity" type="text" formControlName="regCity">
                 </div>
                 <div class="form-group-spacing col-xs-1">
-                    <label for="county">County</label>
-                    <input class="form-control form-control-sm" name="county" id="county" type="text" formControlName="county">
+                    <label for="regCounty">County</label>
+                    <input class="form-control form-control-sm" name="regCounty" id="regCounty" type="text" formControlName="regCounty">
                 </div>
                 <div class="form-group-spacing col-xs-1">
-                    <label for="state">State</label>
-                    <input class="form-control form-control-sm twochar" maxlength="2" name="state" id="state" type="text" formControlName="state">
+                    <label for="regState">State</label>
+                    <input class="form-control form-control-sm twochar" maxlength="2" name="regState" id="regState" type="text" formControlName="regState">
                 </div>
             </div>
             
@@ -68,9 +68,9 @@
             <div class="col gen-info-spacing">
                 Is this person deceased?
                 <div class="radio-inline">
-                    <input id="deceased" formControlName="deceased" value="yes" type="radio" name="deceased" />
+                    <input value="true" formControlName="regDeceased" type="radio"/>
                     <label class="radio-label"> Yes</label>&nbsp;&nbsp;
-                    <input id="deceased" value="no" formControlName="deceased" type="radio" name="deceased" />
+                    <input value="false" formControlName="regDeceased" type="radio"/>
                     <label class="radio-label">No</label>
                 </div>
             </div>

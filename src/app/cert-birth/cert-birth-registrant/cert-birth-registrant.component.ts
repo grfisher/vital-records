@@ -10,14 +10,10 @@ export class CertBirthRegistrantComponent implements OnInit {
 
   registrantFormGroup: FormGroup;
 
-    /* listOfOptions: [
-      {'name': 'some name 1', ID: 'D1', 'checked': true},
-      {'name': 'some name 2', ID: 'D2', 'checked': false}
-    ]; */
-
-    constructor(private containerForm: ControlContainer) { }
+  constructor(private containerForm: ControlContainer) { }
 
   ngOnInit() {
     this.registrantFormGroup = this.containerForm.control.get('registrant') as FormGroup;
+    //this.regDeceased = this.registrantFormGroup.get('regDeceased').value;
   }
 }

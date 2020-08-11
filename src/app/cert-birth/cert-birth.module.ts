@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -99,6 +99,7 @@ const routes = [
     CertBirthRegistrantNavComponent,
     SignaturePadComponent],
     providers: [],
+    schemas: [NO_ERRORS_SCHEMA]
 
 })
 export class CertBirthModule { }

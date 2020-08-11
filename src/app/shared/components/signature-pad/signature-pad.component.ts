@@ -15,8 +15,6 @@ export class SignaturePadComponent implements OnInit, AfterViewInit {
 
   constructor(private containerForm: ControlContainer) { }
 
-
-
   ngOnInit(): void {
     this.sigFormGroup = this.containerForm.control.get('terms') as FormGroup;
   }

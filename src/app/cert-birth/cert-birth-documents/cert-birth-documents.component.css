@@ -74,6 +74,7 @@ hr.gen-info{
 .upload-spacing{
     margin-bottom: 1px;
     margin-top: 7px;
+    flex: 700;
   }
 
   .validation{
@@ -94,4 +95,8 @@ hr.gen-info{
     margin-left: 2px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
+  }
+
+  .cont-width{
+    white-space: nowrap;
   }

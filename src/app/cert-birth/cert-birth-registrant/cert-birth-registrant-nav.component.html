@@ -107,9 +107,9 @@
             <div class="col gen-info-spacing">
                 Is this person deceased?
                 <div class="radio-inline">
-                    <input type="radio" value=false formControlName="regDeceased" name="regDeceased" id="regDeceased"/>
+                    <input type="radio" value=true formControlName="regDeceased"/>
                     <label class="radio-label"> Yes</label>&nbsp;&nbsp;
-                    <input type="radio" value=true formControlName="regDeceased" name="regDeceased" id="regDeceased"/>
+                    <input type="radio" value=false formControlName="regDeceased"/>
                     <label class="radio-label">No</label>
                 </div>   
                 <div *ngIf="registrantFormGroup.controls['regDeceased'].touched && registrantFormGroup.controls['regDeceased'].invalid" class="alert alert-danger">

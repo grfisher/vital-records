@@ -34,7 +34,7 @@ export class BirthFormPagesService {
 
         reqPhone: fb.control('', Validators.required),
         reqEmail: fb.control('', Validators.required),
-        reqEmailConfirm: fb.control('', Validators.required)
+        reqEmailConfirm: fb.control('')
       }),
       registrant: fb.group({
         regCertsReqd: fb.control('', Validators.required),
@@ -49,7 +49,7 @@ export class BirthFormPagesService {
         regCounty: fb.control('', Validators.required),
         regState: fb.control('', Validators.required),
 
-        regDeceased: fb.control(false),
+        regDeceased: fb.control('', Validators.required),
         regFirstName1: fb.control('', Validators.required),
         regMiddleName1: fb.control(''),
         regLastName1: fb.control('', Validators.required),
@@ -62,17 +62,18 @@ export class BirthFormPagesService {
       }),
       stateDocument: fb.group({
         stateDocTitle: fb.control('', Validators.required),
-        stateDocFileName: fb.control('', Validators.required)
-        //description: fb.control('', Validators.required),
-        //length: fb.control('', Validators.required)
+        stateDocFileName: fb.control('', Validators.required),
+        stateDocAbsent: fb.control('')
       }),
       firstDocument: fb.group({
         firstDocTitle: fb.control('', Validators.required),
-        firstDocFileName: fb.control('', Validators.required)
+        firstDocFileName: fb.control('', Validators.required),
+        firstDocAbsent: fb.control('')
       }),
       secondDocument: fb.group({
         secondDocTitle: fb.control('', Validators.required),
-        secondDocFileName: fb.control('', Validators.required)
+        secondDocFileName: fb.control('', Validators.required),
+        secondDocAbsent: fb.control('')
       })
     });
   }

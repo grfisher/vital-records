@@ -22,10 +22,8 @@ export class CertBirthRegistrantNavComponent implements OnInit {
     this.registrantFormGroup.updateValueAndValidity({ onlySelf: true });
 
     if (this.registrantFormGroup.valid === false) {
-      alert('/birthForms/registrant');
       this.router.navigate(['/birthForms/registrant']);
     } else { 
-      alert('/birthForms/documents');
       this.router.navigate(['/birthForms/documents']);
     }
   }

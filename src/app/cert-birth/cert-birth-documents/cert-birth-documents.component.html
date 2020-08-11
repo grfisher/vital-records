@@ -1,13 +1,16 @@
 
+
 <div class="container section-border section-border-spacing">
     <div class="row review-section">Birth Certificate: Documents</div>
-    <div class="row">
+    
+    <form class="row" [formGroup]="stateFormGroup" (ngSubmit)="submitForm('stateDocFileName')">
         <div class="col-lg-3 showInfo">
             <button (click)="stateDocToggle()" class="btn btn-default btn3d">{{ stateDocBtnName }}</button>
         </div>
+
         <div *ngIf = "showStateDocForm; else showStateInfo" class="col-lg-9 upload-spacing">
-            <ng-container>
-                <form [formGroup]="stateFormGroup" (ngSubmit)="submitForm('stateDocFileName')">
+            <ng-container class="cont-width">
+                <nobr>       
                     <label for="name">Document Title&nbsp;</label>
                     <input 
                         formControlName="stateDocTitle"
@@ -23,7 +26,7 @@
                         type="file" 
                         class="form-control-sm"
                         (change)="onStateFileChange($event)">
-                                         
+                                        
                     <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
     
                     <div *ngIf="stateForm.stateDocTitle.touched && stateForm.stateDocTitle.invalid" class="alert alert-danger">
@@ -33,8 +36,8 @@
                                 
                     <div *ngIf="stateForm.stateDocFileName.touched && stateForm.stateDocFileName.invalid" class="alert alert-danger">
                         <div class="validation" *ngIf="stateForm.stateDocFileName.errors.required">File is required.</div>
-                    </div>
-                </form> 
+                    </div>                    
+                </nobr>
                 <pre>
                     STATE DOC TITLE
                     stateForm.stateDocTitle.value: {{ stateForm.stateDocTitle.value }}
@@ -47,22 +50,23 @@
                     stateForm.stateDocFileName.invalid: {{ stateForm.stateDocFileName.invalid }}
                 </pre>
             </ng-container>
-        </div> 
+        </div>
         <ng-template #showStateInfo>
-            <p><span class="line-break-after showInfo">Please provide a copy of your State Issued ID by clicking <i><strong>Upload State Document</strong></i> button</span>
-            <span class="line-break-before">
-                <input type="checkbox"  data-md-icheck (change)="toggleVisibility($event)"/>
-                Click here if you do not have digital copy of document available (office will contact you for more information)</span></p>
+            <p><span class="line-break-after showInfo">Please provide a copy of your first document by clicking <i><strong>Upload State Document</strong></i> button</span>
+                <span class="line-break-before">
+                    <input type="checkbox" name="stateDocAbsent" id="stateDocAbsent" formControlName="stateDocAbsent"   data-md-icheck (change)="toggleVisibility($event,'state')"/>
+                    Click here if you do not have digital copy of document available (office will contact you for more information)</span></p>
         </ng-template>
-    </div>
+    </form>
 
-    <div class="row">
+    <form class="row" [formGroup]="firstFormGroup" (ngSubmit)="submitForm('firstDocFileName')">
         <div class="col-lg-3 showInfo">
             <button (click)="firstDocToggle()" class="btn btn-default btn3d">{{ firstDocBtnName }}</button>
         </div>
+
         <div *ngIf = "showFirstDocForm; else showFirstInfo" class="col-lg-9 upload-spacing">
-            <ng-container>
-                <form [formGroup]="firstFormGroup" (ngSubmit)="submitForm('firstDocFileName')">
+            <ng-container class="cont-width">
+                <nobr>       
                     <label for="name">Document Title&nbsp;</label>
                     <input 
                         formControlName="firstDocTitle"
@@ -78,7 +82,7 @@
                         type="file" 
                         class="form-control-sm"
                         (change)="onFirstFileChange($event)">
-                                         
+                                        
                     <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
     
                     <div *ngIf="firstForm.firstDocTitle.touched && firstForm.firstDocTitle.invalid" class="alert alert-danger">
@@ -88,35 +92,37 @@
                                 
                     <div *ngIf="firstForm.firstDocFileName.touched && firstForm.firstDocFileName.invalid" class="alert alert-danger">
                         <div class="validation" *ngIf="firstForm.firstDocFileName.errors.required">File is required.</div>
-                    </div>
-                </form> 
+                    </div>                    
+                </nobr>
                 <pre>
                     FIRST DOC TITLE
-                    firstForm.stateDocTitle.value: {{ firstForm.firstDocTitle.value }}
-                    firstForm.stateDocTitle.touched: {{ firstForm.firstDocTitle.touched }}
-                    firstForm.stateDocTitle.invalid: {{ firstForm.firstDocTitle.invalid }}
+                    firstForm.firstDocTitle.value: {{ firstForm.firstDocTitle.value }}
+                    firstForm.firstDocTitle.touched: {{ firstForm.firstDocTitle.touched }}
+                    firstForm.firstDocTitle.invalid: {{ firstForm.firstDocTitle.invalid }}
                     
                     FIRST DOC FILE NAME
-                    firstForm.stateDocFileName.value: {{ firstForm.firstDocFileName.value }}
-                    firstForm.stateDocFileName.touched: {{ firstForm.firstDocFileName.touched }}
-                    firstForm.stateDocFileName.invalid: {{ firstForm.firstDocFileName.invalid }}
+                    stateForm.firstDocFileName.value: {{ firstForm.firstDocFileName.value }}
+                    stateForm.firstDocFileName.touched: {{ firstForm.firstDocFileName.touched }}
+                    stateForm.firstDocFileName.invalid: {{ firstForm.firstDocFileName.invalid }}
                 </pre>
             </ng-container>
         </div>
         <ng-template #showFirstInfo>
             <p><span class="line-break-after showInfo">Please provide a copy of your first document by clicking <i><strong>Upload First Document</strong></i> button</span>
                 <span class="line-break-before">
-                    <input type="checkbox"  data-md-icheck (change)="toggleVisibility($event)"/>
+                    <input type="checkbox" name="firstDocAbsent" id="firstDocAbsent" formControlName="firstDocAbsent"   data-md-icheck (change)="toggleVisibility($event,'first')"/>
                     Click here if you do not have digital copy of document available (office will contact you for more information)</span></p>
         </ng-template>
-    </div>
-    <div class="row">
+    </form>
+
+    <form class="row" [formGroup]="secondFormGroup" (ngSubmit)="submitForm('secondDocFileName')">
         <div class="col-lg-3 showInfo">
             <button (click)="secondDocToggle()" class="btn btn-default btn3d">{{ secondDocBtnName }}</button>
         </div>
+
         <div *ngIf = "showSecondDocForm; else showSecondInfo" class="col-lg-9 upload-spacing">
-            <ng-container>
-                <form [formGroup]="secondFormGroup" (ngSubmit)="submitForm('secondDocFileName')">
+            <ng-container class="cont-width">
+                <nobr>       
                     <label for="name">Document Title&nbsp;</label>
                     <input 
                         formControlName="secondDocTitle"
@@ -132,7 +138,7 @@
                         type="file" 
                         class="form-control-sm"
                         (change)="onSecondFileChange($event)">
-                                         
+                                        
                     <button class="btn btn-primary btn-sml" type="submit">Upload File</button>
     
                     <div *ngIf="secondForm.secondDocTitle.touched && secondForm.secondDocTitle.invalid" class="alert alert-danger">
@@ -142,8 +148,8 @@
                                 
                     <div *ngIf="secondForm.secondDocFileName.touched && secondForm.secondDocFileName.invalid" class="alert alert-danger">
                         <div class="validation" *ngIf="secondForm.secondDocFileName.errors.required">File is required.</div>
-                    </div>
-                </form> 
+                    </div>                    
+                </nobr>
                 <pre>
                     SECOND DOC TITLE
                     secondForm.secondDocTitle.value: {{ secondForm.secondDocTitle.value }}
@@ -151,18 +157,16 @@
                     secondForm.secondDocTitle.invalid: {{ secondForm.secondDocTitle.invalid }}
                     
                     SECOND DOC FILE NAME
-                    secondForm.secondDocFileName.value: {{ secondForm.secondDocFileName.value }}
-                    secondForm.secondDocFileName.touched: {{ secondForm.secondDocFileName.touched }}
-                    secondForm.secondDocFileName.invalid: {{ secondForm.secondDocFileName.invalid }}
+                    secondForm.secondDocTitle.value: {{ secondForm.secondDocTitle.value }}
+                    secondForm.secondDocTitle.touched: {{ secondForm.secondDocTitle.touched }}
+                    secondForm.secondDocTitle.invalid: {{ secondForm.secondDocTitle.invalid }}
                 </pre>
             </ng-container>
         </div>
         <ng-template #showSecondInfo>
             <p><span class="line-break-after showInfo">Please provide a copy of your second document by clicking <i><strong>Upload Second Document</strong></i> button</span>
                 <span class="line-break-before">
-                    <input type="checkbox"  data-md-icheck (change)="toggleVisibility($event)"/>
+                    <input type="checkbox" name="secondDocAbsent" id="secondDocAbsent" formControlName="secondDocAbsent" data-md-icheck (change)="toggleVisibility($event,'second')"/>
                     Click here if you do not have digital copy of document available (office will contact you for more information)</span></p>
         </ng-template>
-    <br>
-    </div>
-</div>
+    </form>

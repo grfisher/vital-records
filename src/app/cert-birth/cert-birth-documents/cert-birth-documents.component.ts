@@ -24,8 +24,7 @@ export class CertBirthDocumentsComponent implements OnInit {
   secondDocBtnName: any = 'Upload Second Document';
 
   // Checkbox
-  marked = false;
-  theCheckbox = false;
+  chckBxMarked = false;
 
   constructor(private http: HttpClient, private containerForm: ControlContainer) { }
 
@@ -56,8 +55,6 @@ export class CertBirthDocumentsComponent implements OnInit {
     }
   }
 
-
-
   onFirstFileChange(event) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
@@ -78,7 +75,6 @@ export class CertBirthDocumentsComponent implements OnInit {
 
   submitForm(fileName) {
     const formData = new FormData();
-    alert(this.stateFormGroup.get(fileName).value);
 
     if (fileName === 'stateDocFileName') {
       formData.append('file', this.stateFormGroup.get('stateDocFileName').value);
@@ -129,9 +125,13 @@ export class CertBirthDocumentsComponent implements OnInit {
   }
 
   // Checkbox toggle
-  toggleVisibility(e){
-    this.marked = e.target.checked;
+  toggleVisibility(e, docType) {
+    if ((docType === 'state') && (e.target.checked)) {
+      this.stateFormGroup.get('stateDocTitle').setValue('');
+    } else if ((docType === 'first') && (e.target.checked)) {
+      this.firstFormGroup.get('firstDocTitle').setValue('');
+    } else if ((docType === 'second') && (e.target.checked)) {
+      this.secondFormGroup.get('secondDocTitle').setValue('');
+    }
   }
 }
-
-
